@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
         try 
         {
-          (new EmployeePayrollData()).name = name.value;
+            checkName(name.value);
           setTextValue('.text-error', "");
         } catch (e) 
         {
@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         date?.addEventListener('input', function() {
             let startDate = getInputValueById('#day')+" " + getInputValueById('#month')+" " + getInputValueById('#year');
         try {
-            (new EmployeePayrollData()).startDate = new Date(Date.parse(startDate));
+            checkStartDatenew (new Date(Date.parse(startDate)));
                 setTextValue('.date-error',"");
         } catch (e) {
             setTextValue('.date-error', e);
@@ -62,7 +62,8 @@ const save = (event) => {
 }
 
 const setEmployeePayrollObject = () => {
-    //employeePayrollObj._id = createNewEmployeeId();
+    //employeePayrollObj.id = createNewEmployeeId();
+    if(!isUpdate) employeePayrollObj.id = createNewEmployeeId();
     employeePayrollObj._name = getInputValueById("#name");
     employeePayrollObj._profilePic = getSelectedValues("[name=profile]").pop();
     employeePayrollObj._gender = getSelectedValues("[name=gender]").pop();
@@ -86,21 +87,21 @@ function createAndUpdateStorage()
             {
                 console.log("if show data employeePayrollList : ",employeePayrollList);
                 // console.log("if check employeePayrollObj : ",employeePayrollObj);
-                let empPayrollData = employeePayrollList.find(empData => empData._id === employeePayrollObj._id);
+                let empPayrollData = employeePayrollList.find(empData => empData.id === employeePayrollObj.id);
                 console.log("sds",empPayrollData);
                 if (!empPayrollData) 
                 {
                  
-                            employeePayrollList.push(createEmployeePayrollData());
+                            employeePayrollList.push(employeePayrollObj);
                 }
                 else
                 {
                     const index = employeePayrollList
-                             .map(empData => empData._id)
-                             .indexOf(empPayrollData._id);
-                            //  const raw = createEmployeePayrollData(empPayrollData._id);
-                            //  console.log("raw variable" , employeePayrollList.splice(index, 1, createEmployeePayrollData(empPayrollData._id)))
-                   employeePayrollList.splice(index, 1, createEmployeePayrollData(empPayrollData._id));
+                             .map(empData => empData.id)
+                             .indexOf(empPayrollData.id);
+                            //  const raw = createEmployeePayrollData(empPayrollData.id);
+                            //  console.log("raw variable" , employeePayrollList.splice(index, 1, createEmployeePayrollData(empPayrollData.id)))
+                   employeePayrollList.splice(index, 1, employeePayrollObj);
                     console.log("employeePayrollList var : " , employeePayrollList);
                 }
                       
