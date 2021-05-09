@@ -41,6 +41,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         output.textContent = salary?.value;
 
      });
+     document.querySelector('#cancelButton').href = site_properties.home_page;
      checkForUpdate();
 });
 
