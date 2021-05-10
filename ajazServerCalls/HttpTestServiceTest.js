@@ -1,4 +1,4 @@
-function makePromiseCall(methodType, url, async = true, data = null) {
+function makeServiceCall(methodType, url, async = true, data = null) {
     return new Promise(function (resolve, reject) {
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
@@ -16,8 +16,8 @@ function makePromiseCall(methodType, url, async = true, data = null) {
         }
         xhr.onerror = function () {
             reject({
-                status: this.status,
-                statusText: xhttp.statusText
+                status: xhr.status,
+                statusText: xhr.statusText
             });
         };
         xhr.open(methodType, url, async);
