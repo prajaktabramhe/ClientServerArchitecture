@@ -29,12 +29,14 @@
     <div id="post_services"></div>
     <script>
         const getElem = document.querySelector("#get_services");
-        const getURL = "http://127.0.0.1:3000/employeepayrollDB/1";
+        const getURL = "http://127.0.0.1:3000/employeepayrollDB/3";
         makeServiceCall("GET", getURL, true)
             .then(responseText => {
+                console.log("checkdata for get:", responseText);
                 getElem.textContent = "Get User Data: " + responseText;
             })
             .catch(error => {
+                console.log("check error for get:", error);
                 getElem.textContent = "GET Error Status: " + JSON.stringify(error);
             });
 
@@ -42,9 +44,11 @@
         const deleteURL = "http://127.0.0.1:3000/employeepayrollDB/4";
         makeServiceCall("DELETE", deleteURL, false)
             .then(responseText => {
+                console.log("check delte :", responseText);
                 deleteElem.textContent = "Delete Data: " + responseText;
             })
             .catch(error => {
+                console.log("check error for delete:", error);
                 deleteElem.textContent = "DELETE Error Status: " + JSON.stringify(error);
             });
 
@@ -66,9 +70,11 @@
         const postURL = "http://127.0.0.1:3000/employeepayrollDB";
         makeServiceCall("POST", postURL, true, emplData)
             .then(responseText => {
+                console.log("check responseText fo post:", responseText);
                 postElem.textContent = "New user Data: " + responseText;
             })
             .catch(error => {
+                console.log("check error fo post:", error);
                 postElem.textContent = "POST Error Status: " + JSON.stringify(error);
             });
     </script>

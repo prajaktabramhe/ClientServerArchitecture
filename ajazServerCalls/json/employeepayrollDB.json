@@ -1,53 +1,54 @@
 {
-    "employeepayrollDB": [
-      {
-        "id": 1,
-        "_name": "Prjakta",
-        "_gender": "female",
-        "_department":[
-          "Engineer",
-          "HR"
-        ],
-        "_salary" : "500000",
-        "_startDate": "29 april 2021",
-        "_note": "All in one",
-        "_profilePic": "../assets/profile-images/Ellipse -3.png"
-      },
-      {
-        "id": 2,
-        "_name": "Ankush",
-        "_gender": "male",
-        "_department":[
-          "Finance"
-        ],
-        "_salary" : "400000",
-        "_startDate": "30 april 2021",
-        "_note": "All is not perfect",
-        "_profilePic": "../assets/profile-images/Ellipse -2.png"
-      },
-      { 
-        "id": 3,
-        "_name": "Ekta",
-        "_gender": "female",
-        "_department":[
-          "Sales"
-        ],
-        "_salary" : "200000",
-        "_startDate": "1 may 2021",
-        "_note": "banyan tree is a national tree",
-        "_profilePic": "../assets/profile-images/Ellipse -1.png"
-      },
-      {
-        "id": 4,
-        "_name": "Sanket",
-        "_gender": "male",
-        "_department":[
-          "Sales"
-        ],
-        "_salary" : "100000",
-        "_startDate": "2 may 2021",
-        "_note": "Neem tree give Oxygen in high",
-        "_profilePic": "../assets/profile-images/Ellipse -4.png"
-      }
-    ]
-  }
+  "employeepayrollDB": [
+    {
+      "id": 1,
+      "_name": "Prjakta",
+      "_gender": "female",
+      "_department": [
+        "Engineer",
+        "HR"
+      ],
+      "_salary": "500000",
+      "_startDate": "29 april 2021",
+      "_note": "All in one",
+      "_profilePic": "../assets/profile-images/Ellipse -3.png"
+    },
+    {
+      "id": 2,
+      "_name": "Ankush",
+      "_gender": "male",
+      "_department": [
+        "Finance"
+      ],
+      "_salary": "400000",
+      "_startDate": "30 april 2021",
+      "_note": "All is not perfect",
+      "_profilePic": "../assets/profile-images/Ellipse -2.png"
+    },
+    {
+      "id": 3,
+      "_name": "Ekta",
+      "_gender": "female",
+      "_department": [
+        "Sales"
+      ],
+      "_salary": "200000",
+      "_startDate": "1 may 2021",
+      "_note": "banyan tree is a national tree",
+      "_profilePic": "../assets/profile-images/Ellipse -1.png"
+    },
+    {
+      "_name": "Prjakta",
+      "_gender": "female",
+      "_department": [
+        "Engineering",
+        "Finance"
+      ],
+      "_salary": "500000",
+      "_startDate": "29 april 2021",
+      "_note": "All in one",
+      "_profilePic": "../assets/profile-images/Ellipse -3.png",
+      "id": 4
+    }
+  ]
+}
