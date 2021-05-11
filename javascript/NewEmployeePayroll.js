@@ -79,8 +79,8 @@ const remove = (node) => {
 
 const update = async (node) => {
        
-    // let empPayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
-    // console.log("check id",node.id);
+    let empPayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    console.log("check id",node.id);
     let empPayrollData = await empPayrollList.find(empData => empData.id == node.id)
     console.log("check update function",empPayrollData);
     if(!empPayrollData) return;
