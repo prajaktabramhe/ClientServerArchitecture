@@ -20,7 +20,7 @@ const createInnerHtml = () =>  {
     for(const empPayrollData of empPayrollList) {
         innerHtml = `${innerHtml}
         <tr>
-        <td><img class="profile" src="${empPayrollData.profilePic}"  alt=""></td>
+        <td><img class="profile" src="${empPayrollData._profilePic}"  alt=""></td>
         <td>${empPayrollData._name}</td>
         <td>${empPayrollData._gender}</td>
         <td>${getDeptHtml(empPayrollData._department)}</td>
