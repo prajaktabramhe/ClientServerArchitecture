@@ -11,7 +11,7 @@ const stringifyDate = (date) => {
     if(!nameRegex.test(name)) throw 'Name is Incorrect';
    }
    
-   
+  /* 
    const update = async (node) => {
        
        let empPayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
@@ -22,7 +22,7 @@ const stringifyDate = (date) => {
        localStorage.setItem('editEmp', JSON.stringify(empPayrollData))
        window.location.replace("../pages/EmployeePayrollApp.html");
    }
-   
+   */
    const checkStartDate=(startDate)=>{
         let now =new Date();
         if(startDate>now) throw 'Start Date is a Future Date!';

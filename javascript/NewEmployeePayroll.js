@@ -76,3 +76,14 @@ const remove = (node) => {
     document.querySelector(".emp-count").textContent = empPayrollList?.length;
     createInnerHtml();
 }
+
+const update = async (node) => {
+       
+    // let empPayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    // console.log("check id",node.id);
+    let empPayrollData = await empPayrollList.find(empData => empData.id == node.id)
+    console.log("check update function",empPayrollData);
+    if(!empPayrollData) return;
+    localStorage.setItem('editEmp', JSON.stringify(empPayrollData))
+    window.location.replace("../pages/EmployeePayrollApp.html");
+}
