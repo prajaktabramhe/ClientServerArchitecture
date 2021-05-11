@@ -2,6 +2,7 @@ let isUpdate = false;
 let employeePayrollObj = {};
 
 window.addEventListener('DOMContentLoaded', (event) => {
+    checkForUpdate();
     const name = document.querySelector('#name');
     //const textError = document.querySelector('.text-error');
     name?.addEventListener('input', function() {
@@ -42,7 +43,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
      });
      document.querySelector('#cancelButton').href = site_properties.home_page;
-     checkForUpdate();
+     
 });
 
 const save = (event) => {
@@ -65,6 +66,7 @@ const save = (event) => {
 const setEmployeePayrollObject = () => {
     //employeePayrollObj.id = createNewEmployeeId();
     if(!isUpdate) employeePayrollObj.id = createNewEmployeeId();
+   // if(isUpdate) employeePayrollObj._id= id;
     employeePayrollObj._name = getInputValueById("#name");
     employeePayrollObj._profilePic = getSelectedValues("[name=profile]").pop();
     employeePayrollObj._gender = getSelectedValues("[name=gender]").pop();
@@ -197,6 +199,7 @@ const setTextValue = (id,value) => {
 }
 
 const setValue = (id, value) => {
+    console.log("check id and value", id , value);
     const element = document.querySelector(id);
     element.value = value;
 }
@@ -211,6 +214,7 @@ const checkForUpdate = () => {
     isUpdate = employeePayrollJson ? true : false;
     if(!isUpdate) return;
     employeePayrollObj = JSON.parse(employeePayrollJson);
+    console.log("dfdf",employeePayrollObj );
     setForm();
 }
 
@@ -218,7 +222,7 @@ const checkForUpdate = () => {
 const setForm = () => {
    
     setValue('#name', employeePayrollObj._name);
-    setSelectedValues('[name=profile]', employeePayrollObj.profilePic);
+    setSelectedValues('[name=profile]', employeePayrollObj._profilePic);
     // console.log("Pic",employeePayrollObj._profilePic);
     setSelectedValues('[name=gender]', employeePayrollObj._gender);
     setSelectedValues('[name=department]', employeePayrollObj._department);
