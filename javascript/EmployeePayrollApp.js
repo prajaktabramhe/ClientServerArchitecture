@@ -148,6 +148,7 @@ const setEmployeePayrollData = (employeePayrollData) => {
 }
 
 
+
 const createNewEmployeeId = () => {
     let empID = localStorage.getItem("EmployeeID");
     empID = !empID ? 1 : (parseInt(empID) + 1).toString();

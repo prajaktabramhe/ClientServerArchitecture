@@ -1,23 +1,41 @@
 let empPayrollList;
 window.addEventListener('DOMContentLoaded', (event) => {
-    empPayrollList = getEmployeePayrollDataFromStorage();
+    if(site_properties.use_local_storage.match("true")) {
+        getEmployeePayrollDataFromStorage();
+    } else getEmployeePayrollDataFromServer();
+   
+});
+
+const getEmployeePayrollDataFromStorage = () => {
+   empPayrollList = localStorage.getItem('EmployeePayrollList') ? JSON.parse(localStorage.getItem("EmployeePayrollList")) : [];
+   processEmployeePayrollDataResponse();
+}
+
+const processEmployeePayrollDataResponse = () => {
     document.querySelector(".emp-count").textContent = empPayrollList?.length;
     createInnerHtml();
     localStorage.removeItem('editEmp');
+}
+
+const getEmployeePayrollDataFromServer = () => {
+    makeServiceCall("GET", site_properties.server_url, true)
+    .then(responseText => {
+        empPayrollList = JSON.parse(responseText);
+        processEmployeePayrollDataResponse();
+    })
+    .catch(error => {
+        console.log("GET Error Status: " + JSON.stringify(error));
+        empPayrollList = [];
+        processEmployeePayrollDataResponse();
     });
-
-const getEmployeePayrollDataFromStorage = () => {
-    return localStorage.getItem('EmployeePayrollList') ?
-    JSON.parse(localStorage.getItem('EmployeePayrollList')) : [] ;
-
 }
 
 const createInnerHtml = () =>  {
     if(empPayrollList?.length == 0) return;
     const headerHtml = "<tr><th></th><th>Name</th><th>Gender</th><th>Department</th><th>Salary</th><th>start Date</th><th>Actions</th></tr>"; 
     let innerHtml = `${headerHtml}`;
-    
-    for(const empPayrollData of empPayrollList) {
+    for(const empPayrollData of empPayrollList) 
+    {
         innerHtml = `${innerHtml}
         <tr>
         <td><img class="profile" src="${empPayrollData._profilePic}"  alt=""></td>
@@ -38,7 +56,8 @@ const createInnerHtml = () =>  {
 
 const getDeptHtml = (deptList) => {
     let deptHtml = '';
-    for(const dept of deptList) {
+    for(const dept of deptList) 
+    {
         deptHtml = `${deptHtml} <div class='dept-label'>${dept}</div>`;
     }
     return deptHtml ;
