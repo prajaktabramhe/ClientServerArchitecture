@@ -22,7 +22,6 @@ const stringifyDate = (date) => {
        localStorage.setItem('editEmp', JSON.stringify(empPayrollData))
        window.location.replace("../pages/EmployeePayrollApp.html");
    }
-
    
    const checkStartDate=(startDate)=>{
         let now =new Date();
