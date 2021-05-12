@@ -1,54 +1,42 @@
 {
   "employeepayrollDB": [
     {
-      "id": 1,
-      "_name": "Prjakta",
+      "_name": "Prajakta",
+      "_profilePic": "../assets/profile-images/Ellipse -10.png",
       "_gender": "female",
       "_department": [
-        "Engineer",
-        "HR"
+        "Finance"
       ],
-      "_salary": "500000",
-      "_startDate": "29 april 2021",
-      "_note": "All in one",
-      "_profilePic": "../assets/profile-images/Ellipse -3.png"
+      "_salary": "349800",
+      "_note": "cdcdf",
+      "_startDate": "9 May 2021",
+      "id": 1
     },
     {
-      "id": 2,
-      "_name": "Ankush",
+      "_name": "Sanket",
+      "_profilePic": "../assets/profile-images/Ellipse -1.png",
       "_gender": "male",
       "_department": [
-        "Finance"
+        "Finance",
+        "Engineer"
       ],
       "_salary": "400000",
-      "_startDate": "30 april 2021",
-      "_note": "All is not perfect",
-      "_profilePic": "../assets/profile-images/Ellipse -2.png"
+      "_note": "xcdcd",
+      "_startDate": "5 May 2021",
+      "id": 2
     },
     {
-      "id": 3,
-      "_name": "Ekta",
-      "_gender": "female",
-      "_department": [
-        "Sales"
-      ],
-      "_salary": "200000",
-      "_startDate": "1 may 2021",
-      "_note": "banyan tree is a national tree",
-      "_profilePic": "../assets/profile-images/Ellipse -1.png"
-    },
-    {
-      "_name": "Prjakta",
-      "_gender": "female",
-      "_department": [
-        "Engineering",
-        "Finance"
-      ],
-      "_salary": "500000",
-      "_startDate": "29 april 2021",
-      "_note": "All in one",
+      "_name": "Harshit",
       "_profilePic": "../assets/profile-images/Ellipse -3.png",
-      "id": 4
+      "_gender": "male",
+      "_department": [
+        "Finance",
+        "Others"
+      ],
+      "_salary": "400000",
+      "_note": "dfgfhh",
+      "_startDate": "10 May 2021",
+      "id": 3
     }
   ]
 }

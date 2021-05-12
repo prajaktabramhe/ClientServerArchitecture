@@ -83,8 +83,9 @@ const remove = (node) => {
     document.querySelector(".emp-count").textContent = empPayrollList?.length;
     createInnerHtml();
   } else {
+    let methodType = "DELETE";
     const deleteURL = site_properties.server_url + empPayrollData.id.toString();
-    makeServiceCall("DELETE", deleteURL, false)
+    makeServiceCall(methodType, deleteURL, true)
       .then((responseText) => {
         createInnerHtml();
       })
@@ -93,12 +94,10 @@ const remove = (node) => {
       });
   }
 };
-const update = async (node) => {
-  let empPayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
-  console.log("check id", node.id);
-  let empPayrollData = await empPayrollList.find(
-    (empData) => empData.id == node.id
-  );
+const update = (node) => {
+  // let empPayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+  // console.log("check id", node.id);
+  let empPayrollData = empPayrollList.find(empData => empData.id == node.id);
   console.log("check update function", empPayrollData);
   if (!empPayrollData) return;
   localStorage.setItem("editEmp", JSON.stringify(empPayrollData));
